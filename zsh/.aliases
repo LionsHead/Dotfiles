@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Example aliases
+
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+# git
+alias gs='git status -sb'
+# alias gd="git diff --cached"
+alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
+alias gb="git branch"
+
+alias gff="git flow feature"
+alias gffs="git flow feature start"
+
+alias gc="git commit"
+alias gc!="git commit --amend"
+alias gcam="git add -A && git commit -m"
+
+alias gm="git merge --no-ff"
+
+alias gp="git pull --rebase"
+alias poh="git push origin head"
+
+alias unstage="git reset HEAD --"
+alias no-merged="git branch -r -v --no-merged origin/develop"
+
+alias gtop="git shortlog -sn"
+alias gl="git log --pretty=oneline"
+alias glg="git log --graph --pretty=oneline"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+
+alias gltag="git describe --abbrev=0 --tags"
+alias gdct="git describe --tags `git rev-list --tags --max-count=1`"
+
+alias gcmb='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|staging)\s*$)" | command xargs -n 1 git branch -d'
+
+# ruby bundler
+alias be="bundle exec"
+alias ber="bundle exec rake"
+alias bec="bundle exec cap"
+
+# docker commands
+alias dcrun="docker-compose run --rm --service-ports web bash"
+alias dcbash="docker-compose run --rm web bash"
+alias dc="docker-compose"
+
+# docker-sync
+alias dsync="docker-sync start"
+alias ds="docker-sync"

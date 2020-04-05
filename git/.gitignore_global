@@ -1,0 +1,17 @@
+# General macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# asdf
+.tool-versions
+
+# docker-compose
+docker-compose.override.yml
+
+# docker-sync
+.docker-sync/
+docker-sync.yml
+
+# elixir
+.elixir_ls
