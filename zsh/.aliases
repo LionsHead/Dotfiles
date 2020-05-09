@@ -5,7 +5,7 @@
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # git
-alias gs='git status -sb'
+alias gs='git status -sb -uall'
 # alias gd="git diff --cached"
 alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
 alias gb="git branch"
