@@ -16,16 +16,16 @@ cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 cd ~
 
-if ! asdf plugin-list | grep elixir > /dev/null
-then
-  info "Installing elixir asdf plugin"
-  asdf plugin-add elixir
-fi
-
 if ! asdf plugin-list | grep erlang > /dev/null
 then
     info "Installing erlang asdf plugin"
     asdf plugin-add erlang
+fi
+
+if ! asdf plugin-list | grep elixir > /dev/null
+then
+  info "Installing elixir asdf plugin"
+  asdf plugin-add elixir
 fi
 
 if ! asdf plugin-list | grep ruby > /dev/null

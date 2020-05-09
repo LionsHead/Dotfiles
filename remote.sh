@@ -7,12 +7,9 @@ mkdir -p $DOTFILES_PATH
 
 if command -v "curl" &> /dev/null; then
     curl -LsS $GITHUB_TAR_URL | tar xvzf - -C $DOTFILES_PATH --strip 1
-
 elif command -v "wget" &> /dev/null; then
-
     wget -qO- $GITHUB_TAR_URL | tar xvzf - -C $DOTFILES_PATH --strip 1
 fi
 
 cd $DOTFILES_PATH
-
-source install.sh
+sh ./install.sh
