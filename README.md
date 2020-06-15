@@ -5,7 +5,7 @@
 + Git setup
 + Oh my ZSH + powerlevel9k theme
 + VScode sync configuration
-+ ASDF version manager
++ ASDF version manager (include Ruby, Node, Elixir, Go, Rust)
 + FiraCode font
 
 ## terminal & git

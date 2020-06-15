@@ -1,6 +1,9 @@
 [core]
 	pager = less -F -X
-	excludesfile = /Users/endurance/.gitignore_global
+	excludesfile = ~/.gitignore_global
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
 
 [include]
 	path = ~/.gitconfig_local
@@ -35,6 +38,15 @@
 	required = true
 
 [alias]
+	c = commit
+	m = merge --no-ff
+	br = branch
+	co = checkout
+	up = pull --rebase
+	poh = push origin head
+	unstage = reset HEAD --
+	discard = reset --hard HEAD
+
 	# List aliases
 	aliases = config --get-regexp alias
 
@@ -59,15 +71,6 @@
 	# Amend the currently staged files to the latest commit
 	amend = !git add -A && commit --amend --reuse-message=HEAD
 
-	c = commit
-	m = merge --no-ff
-	br = branch
-	co = checkout
-	up = pull --rebase
-	poh = push origin head
-	unstage = reset HEAD --
-	discard = reset --hard HEAD
-
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	last = log --pretty=oneline -n 20 --graph --abbrev-commit --date=short
 	# Short log
@@ -85,4 +88,3 @@
 
 	# Squash commits
 	squash = rebase --interactive --autosquash
-
