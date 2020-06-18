@@ -46,7 +46,7 @@
   up = pull --rebase
   poh = push origin head
   co = checkout
-  br = branch
+  br = branch -av --contains
   brs = for-each-ref --sort=-committerdate --count=10 refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
   # Set remote origin
   set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
