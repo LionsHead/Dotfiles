@@ -1,6 +1,8 @@
 .DS_Store
-.vscode/
+
 git/.gitconfig_local
+
+.vscode/
 vscode/User/workspaceStorage/
 vscode/User/globalStorage/state.vscdb
 vscode/User/globalStorage/state.vscdb.backup
