@@ -1,6 +1,5 @@
 export ZSH="${HOME}/.oh-my-zsh"
 export ARCHFLAGS="-arch x86_64"
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 DEFAULT_USER=`whoami`
 DISABLE_UNTRACKED_FILES_DIRTY="true"
@@ -32,7 +31,6 @@ POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs status)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
 
-# time
 POWERLEVEL9K_TIME_FOREGROUND='black'
 POWERLEVEL9K_TIME_BACKGROUND='blue'
 # POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S | %d.%m.%yг.}"
