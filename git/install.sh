@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # Setup gitconfig
+if [[ -f ~/.gitconfig_local ]]; then
+  success 'Enable ~/.gitconfig_local'
+fi
+
 read -r -p "Setup git local configuration? [Y|n] " response
 if [[ $response =~ (y|yes|Y) ]];then
   info 'Setup git config'
