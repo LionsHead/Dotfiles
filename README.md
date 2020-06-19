@@ -17,21 +17,6 @@
 ➜ make zbs
 ```
 
-## VScode
-
-install by brew `brew cask install visual-studio-code `
-
-[Settings sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
-
-usage:
-
-```
-upload setting - shift + alt + U
-download setting - shift + alt + D
-```
-
-my gist: [my cloud config](https://gist.github.com/LionsHead/ec37901ffbc41e0ab7e6f390a5802809)
-
 ## Brew
 
 If a dependency is already installed and there is an upgrade available it will be upgraded.
