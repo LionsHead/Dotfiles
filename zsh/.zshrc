@@ -50,3 +50,7 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 
 # java
 export JAVA_HOME=`/usr/libexec/java_home`
+
+if [[ -f ~/.zshrc_local ]]; then
+  source ~/.zshrc_local
+fi

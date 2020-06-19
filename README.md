@@ -1,3 +1,10 @@
+# Customizations
+
+Put your custom dotfiles:
+
+~/.gitconfig_local
+~/.zshrc_local
+
 # Dotfiles
 
 + Mac settings +
