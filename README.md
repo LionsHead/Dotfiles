@@ -1,19 +1,19 @@
 # Customizations
 
-Put your custom dotfiles:
+Put your custom configuration:
 
+```
 ~/.gitconfig_local
 ~/.zshrc_local
+```
 
 # Dotfiles
 
 + Mac settings +
-+ Brew + cask applications
++ Brew + cask applications + font
 + Git setup
 + Oh my ZSH + powerlevel9k theme
-+ VScode sync configuration
 + ASDF version manager (include Ruby, Node, Elixir, Go, Rust)
-+ FiraCode font
 
 ## terminal & git
 
