@@ -5,7 +5,6 @@ apps=(
     visual-studio-code
     google-chrome
     slack
-    skype
     telegram
     1password
 )
@@ -21,7 +20,7 @@ if ! [ -x "$(command -v brew)" ]; then
 fi
 
 # Install apps
-read -r -p "Install ? [Y|n] " response
+read -r -p "Install brew apps? [Y|n] " response
 if [[ $response =~ (y|yes|Y) ]];then
   info 'Brew install apps'
 
