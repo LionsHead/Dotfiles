@@ -70,9 +70,6 @@ defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 # Terminal: Only use UTF-8 in Terminal.app
 # defaults write com.apple.terminal StringEncodings -array 4
 
-# Time Machine: Disable local backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
-
 # Enable key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Keyboard: Configure keyboard repeat https://apple.stackexchange.com/a/83923/200178
