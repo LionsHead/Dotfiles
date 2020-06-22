@@ -27,15 +27,14 @@ if [[ $response =~ (y|yes|Y) ]];then
   brew bundle --file="${DOTFILES_PATH}brew/Brewfile"
   brew cask install "${apps[@]}"
 
-  # Install fonts
-  read -r -p "Install fonts? [Y|n] " response
-  if [[ $response =~ (y|yes|Y) ]];then
-
-    brew cask install font-fira-code
-
-    success 'Fonts installed'
-  fi
-
   success 'Installed'
 fi
 
+# Install fonts
+read -r -p "Install fonts? [Y|n] " response
+if [[ $response =~ (y|yes|Y) ]];then
+
+  brew cask install font-fira-code
+
+  success 'Fonts installed'
+fi
