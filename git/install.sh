@@ -5,7 +5,7 @@ if [[ -f ~/.gitconfig_local ]]; then
   success 'Enable ~/.gitconfig_local'
 fi
 
-read -r -p "Setup git local configuration? [Y|n] " response
+read -r -p "Setup new git local configuration? [Y|n] " response
 if [[ $response =~ (y|yes|Y) ]];then
   info 'Setup git config'
 
@@ -20,9 +20,18 @@ if [[ $response =~ (y|yes|Y) ]];then
 
   sed -e "s/GIT_NAME/$git_name/g" -e "s/GIT_EMAIL/$git_email/g" -e "s/GITHUB_USER/$github_user/g" git/.gitconfig_local.example > ~/.gitconfig_local
 
+  success 'Create ~/.gitconfig_local'
+fi
+
+link "git/.gitconfig"
+link "git/.gitignore_global"
+
+# Install fonts
+read -r -p "Override git config? [Y|n] " response
+if [[ $response =~ (y|yes|Y) ]];then
+
   link "git/.gitconfig"
-  link "git/.gitconfig_local"
   link "git/.gitignore_global"
 
-  success 'Done git config'
+  success 'fonts installed'
 fi
