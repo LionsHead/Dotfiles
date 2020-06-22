@@ -23,10 +23,6 @@ if [[ $response =~ (y|yes|Y) ]];then
   success 'Create ~/.gitconfig_local'
 fi
 
-link "git/.gitconfig"
-link "git/.gitignore_global"
-
-# Install fonts
 read -r -p "Override git config? [Y|n] " response
 if [[ $response =~ (y|yes|Y) ]];then
 
