@@ -9,10 +9,10 @@ Put your custom configuration:
 
 # Dotfiles
 
-+ Mac settings +
++ Mac settings
 + Brew + cask applications + font
 + Git setup
-+ Oh my ZSH + powerlevel9k theme
++ Oh my ZSH + powerlevel10k theme
 + ASDF version manager (include Ruby, Node, Elixir, Go, Rust)
 
 ## terminal & git

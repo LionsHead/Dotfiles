@@ -70,7 +70,7 @@ link "dot_configs/ruby/.gemrc"
 link "dot_configs/ruby/.default-gems"
 
 # Visual Studio Code
-source vscode/intall.sh
+source vscode/install.sh
 
 # ZSH
 source zsh/install.sh

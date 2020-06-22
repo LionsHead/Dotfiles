@@ -11,7 +11,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 source $ZSH/oh-my-zsh.sh
 source ~/.iterm2_shell_integration.zsh
@@ -29,7 +29,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(asdf time)
 
 POWERLEVEL9K_TIME_FOREGROUND='black'
 POWERLEVEL9K_TIME_BACKGROUND='blue'
