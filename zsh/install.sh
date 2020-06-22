@@ -3,7 +3,6 @@
 info "Installing oh-my-zsh"
 
 brew install zsh zsh-completions
-chsh -s /usr/local/bin/zsh
 
 link "zsh/.zshrc"
 link "zsh/.aliases"

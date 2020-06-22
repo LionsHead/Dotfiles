@@ -26,8 +26,7 @@ done
 info "Installed plugins"
 asdf plugin list
 
-read -r -p "Install tools by .tool-versions? [Y|n] " response
-if [[ $response =~ (y|yes|Y) ]];then
+if [[ $response_asdf_tools =~ (y|yes|Y) ]];then
   info "Install languages"
   asdf install
 fi

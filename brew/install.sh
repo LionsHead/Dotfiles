@@ -9,6 +9,34 @@ apps=(
     1password
 )
 
+# tap "homebrew/bundle"
+# tap "homebrew/cask"
+# tap "homebrew/cask-fonts"
+# tap "homebrew/core"
+# tap "homebrew/services"
+
+# brew "autoconf"
+# brew "automake"
+# brew "bat"
+# brew "coreutils"
+# brew "ctags"
+# brew "fx"
+# brew "readline"
+# brew "libtool"
+# brew "graphviz"
+# brew "imagemagick"
+# brew "libxslt"
+# brew "libyaml"
+# brew "minikube"
+# brew "openshift-cli"
+# brew "rsync"
+# brew "unixodbc"
+# brew "wxmac"
+# brew "yarn"
+
+# cask "font-fira-code"
+# cask "minikube"
+
 # Install brew
 if ! [ -x "$(command -v brew)" ]; then
   info "Install brew"
@@ -20,8 +48,7 @@ if ! [ -x "$(command -v brew)" ]; then
 fi
 
 # Install apps
-read -r -p "Install brew apps? [Y|n] " response
-if [[ $response =~ (y|yes|Y) ]];then
+if [[ $response_cask =~ (y|yes|Y) ]];then
   info 'Brew install apps'
 
   brew bundle --file="${DOTFILES_PATH}brew/Brewfile"
@@ -31,9 +58,9 @@ if [[ $response =~ (y|yes|Y) ]];then
 fi
 
 # Install fonts
-read -r -p "Install fonts? [Y|n] " response
-if [[ $response =~ (y|yes|Y) ]];then
+if [[ $response_font =~ (y|yes|Y) ]];then
 
+  brew tap homebrew/cask-fonts
   brew cask install font-fira-code
 
   success 'Fonts installed'
