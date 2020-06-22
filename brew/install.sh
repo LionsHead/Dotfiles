@@ -1,13 +1,5 @@
 #!/bin/bash
 
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-success () {
-  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
-}
-
 apps=(
     iterm2
     visual-studio-code
@@ -21,29 +13,30 @@ apps=(
 # Install brew
 if ! [ -x "$(command -v brew)" ]; then
   info "Install brew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew update
 
-  brew bundle --file="${DOTFILES_PATH}brew/Brewfile"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  brew update
 
   success 'Brew installed'
 fi
 
-info 'Brew cask'
-
-# Install Caskroom
-brew tap caskroom/cask
-brew tap caskroom/fonts
-brew tap caskroom/versions
-
-brew install brew-cask
-
-brew cask install "${apps[@]}"
-
-# Install fonts
-read -r -p "Install fonts? [Y|n] " response
+# Install apps
+read -r -p "Install ? [Y|n] " response
 if [[ $response =~ (y|yes|Y) ]];then
-  brew cask install font-fira-code
+  info 'Brew install apps'
 
-  success 'fonts installed'
+  brew bundle --file="${DOTFILES_PATH}brew/Brewfile"
+  brew cask install "${apps[@]}"
+
+  # Install fonts
+  read -r -p "Install fonts? [Y|n] " response
+  if [[ $response =~ (y|yes|Y) ]];then
+
+    brew cask install font-fira-code
+
+    success 'Fonts installed'
+  fi
+
+  success 'Installed'
 fi
+
