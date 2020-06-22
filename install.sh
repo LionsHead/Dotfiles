@@ -50,16 +50,13 @@ ln -fisv "${DOTFILES_PATH}ssh/config" ~/.ssh/config
 source brew/install.sh
 
 # iTerm2
-read -r -p "Use default settings for ierm2? [Y|n] " response
+read -r -p "Use default settings for iTerm2? [Y|n] " response
 if [[ $response =~ (y|yes|Y) ]];then
   defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "${DOTFILES_PATH}iterm2"
   defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
   success 'iTerm2 configured'
 fi
-
-# ZSH
-source zsh/install.sh
 
 # ASDF version manager
 source asdf/install.sh
@@ -74,5 +71,8 @@ link "dot_configs/ruby/.default-gems"
 
 # Visual Studio Code
 source vscode/intall.sh
+
+# ZSH
+source zsh/install.sh
 
 success 'Done.'
