@@ -1,21 +1,5 @@
 #!/bin/bash
 
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-link () {
-	ln -fisv "${DOTFILES_PATH}$1" ~
-}
-
-link "asdf/.asdfrc"
-link "asdf/.tool-versions"
-
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-cd ~/.asdf
-git checkout "$(git describe --abbrev=0 --tags)"
-cd ~
-
 plugins=(
   ruby
   erlang
@@ -24,6 +8,11 @@ plugins=(
   golang
   rust
 )
+
+link "asdf/.asdfrc"
+link "asdf/.tool-versions"
+
+brew install asdf
 
 for plugin in "${plugins[@]}"
 do
