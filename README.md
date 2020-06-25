@@ -5,6 +5,7 @@ Put your custom configuration:
 ```
 ~/.gitconfig_local
 ~/.zshrc_local
+~/.ssh/config_local
 ```
 
 # Dotfiles

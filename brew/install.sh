@@ -47,21 +47,14 @@ if ! [ -x "$(command -v brew)" ]; then
   success 'Brew installed'
 fi
 
-# Install apps
-if [[ $response_cask =~ (y|yes|Y) ]];then
+# Install brew packages
+if [[ $response_packges =~ (y|yes|Y) ]];then
   info 'Brew install apps'
 
   brew bundle --file="${DOTFILES_PATH}brew/Brewfile"
   brew cask install "${apps[@]}"
 
   success 'Installed'
-fi
-
-# Install fonts
-if [[ $response_font =~ (y|yes|Y) ]];then
-
-  brew tap homebrew/cask-fonts
-  brew cask install font-fira-code
 
   success 'Fonts installed'
 fi
