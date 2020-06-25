@@ -18,7 +18,11 @@ if [[ $response =~ (y|yes|Y) ]];then
   info ' - What is your github user name?'
   read -e github_user
 
-  sed -e "s/GIT_NAME/$git_name/g" -e "s/GIT_EMAIL/$git_email/g" -e "s/GITHUB_USER/$github_user/g" git/.gitconfig_local.example > ~/.gitconfig_local
+
+  info ' - What is your github user access token?'
+  read -e github_token
+
+  sed -e "s/GIT_NAME/$git_name/g" -e "s/GIT_EMAIL/$git_email/g" -e "s/GITHUB_USER/$github_user/g" -e "s/GITHUB_TOKEN/$github_token/g" git/.gitconfig_local.example > ~/.gitconfig_local
 
   success 'Create ~/.gitconfig_local'
 fi

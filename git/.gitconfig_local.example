@@ -4,3 +4,4 @@
 
 [github]
   user = GITHUB_USER
+  token = GITHUB_TOKEN
