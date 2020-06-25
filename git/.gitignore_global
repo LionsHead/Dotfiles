@@ -13,5 +13,8 @@ docker-compose.override.yml
 .docker-sync/
 docker-sync.yml
 
-# elixir
+#
+.idea
+.generators
+.rakeTasks
 .elixir_ls
