@@ -62,7 +62,7 @@
   # Squash commits
   squash = rebase --interactive --autosquash
   # Amend the currently staged files to the latest commit
-  amend = !git add -A && commit --amend --no-edit
+  amend = !git add -A && git commit --amend --no-edit
 
   ################################ History
   # Show last tag
