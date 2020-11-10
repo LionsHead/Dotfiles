@@ -16,7 +16,7 @@ Put your custom configuration:
 + Oh my ZSH + powerlevel10k theme
 + ASDF version manager (include Ruby, Node, Elixir, Go, Rust)
 
-## terminal & git
+## Terminal & Git
 
 ```
 # init
@@ -35,7 +35,7 @@ Create new Brewfile
 
 `brew bundle dump --force`
 
-## iterm2 setup
+## iTerm2 setup
 
 “Load preferences from folder"
 
