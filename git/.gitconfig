@@ -5,6 +5,9 @@
 [include]
   path = ~/.gitconfig_local
 
+[includeIf "gitdir:/Users/user/Work/**"]
+    path = ~/Work/.gitconfig
+
 [credential]
     helper = osxkeychain
 
@@ -45,6 +48,9 @@
   del-merged = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
   # View branches that don't merged with develop
   no-merged = branch -r -v --no-merged origin/develop
+
+  # squash all your commits to master
+  remaster = reset $(git merge-base master $(git branch --show-current))
 
   ################################ Changes
   unstage = reset HEAD --

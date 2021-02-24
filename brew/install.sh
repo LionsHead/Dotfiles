@@ -1,13 +1,13 @@
 #!/bin/bash
 
-apps=(
-    iterm2
-    visual-studio-code
-    google-chrome
-    slack
-    telegram
-    1password
-)
+# apps=(
+#     iterm2
+#     visual-studio-code
+#     google-chrome
+#     slack
+#     telegram
+#     1password
+# )
 
 # tap "homebrew/bundle"
 # tap "homebrew/cask"
@@ -48,13 +48,13 @@ if ! [ -x "$(command -v brew)" ]; then
 fi
 
 # Install brew packages
-if [[ $response_packges =~ (y|yes|Y) ]];then
-  info 'Brew install apps'
+# if [[ $response_packges =~ (y|yes|Y) ]];then
+#   info 'Brew install apps'
 
-  brew bundle --file="${DOTFILES_PATH}brew/Brewfile"
-  brew cask install "${apps[@]}"
+#   brew bundle --file="${DOTFILES_PATH}brew/Brewfile"
+#   brew --cask install "${apps[@]}"
 
-  success 'Installed'
+#   success 'Installed'
 
-  success 'Fonts installed'
-fi
+#   success 'Fonts installed'
+# fi

@@ -1,8 +1,26 @@
 export ZSH="${HOME}/.oh-my-zsh"
-export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch x86_64" m1 hello
 
 DEFAULT_USER=`whoami`
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# brew fix ffi
+# brew install automake libffi pkg-config
+# export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+# gem install ffi -v '1.12.2' -- --with-cflags="-Wno-error=implicit-function-declaration"
+#### apple m1 cfg
+# asdf m1
+export RUBY_CONFIGURE_OPTS="--with-zlib-dir=/opt/homebrew/opt/zlib --with-openssl-dir=/opt/homebrew/opt/openssl@1.1 --with-readline-dir=/opt/homebrew/opt/readline --with-libyaml-dir=/opt/homebrew/opt/libyaml"
+export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+export CONFIGURE_OPTS="--build aarch64-apple-darwin20"
+# ffi m1
+export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+
+# new test
+
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
 
 # use zplug?
 plugins=(
@@ -12,6 +30,7 @@ plugins=(
 )
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
 source ~/.iterm2_shell_integration.zsh
@@ -44,13 +63,20 @@ POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='red'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 
-# asdf
+# brew
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+#### asdf
+# native installation
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+#
+# by brew
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-# java
-export JAVA_HOME=`/usr/libexec/java_home`
+#### local config
 
 if [[ -f ~/.zshrc_local ]]; then
   source ~/.zshrc_local
 fi
+
