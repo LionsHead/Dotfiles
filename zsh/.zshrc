@@ -78,4 +78,3 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 if [[ -f ~/.zshrc_local ]]; then
   source ~/.zshrc_local
 fi
-
