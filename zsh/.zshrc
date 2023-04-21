@@ -67,14 +67,15 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 eval "$(/opt/homebrew/bin/brew shellenv)"
 #### asdf
 # native installation
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# . $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
 #
 # by brew
-# . /opt/homebrew/opt/asdf/libexec/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 #### local config
 
 if [[ -f ~/.zshrc_local ]]; then
   source ~/.zshrc_local
 fi
+

@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # Sets reasonable macOS defaults.
+# https://macos-defaults.com/
+
+# Show hidden files in the Finder.
+# You can toggle the value using ⌘ cmd+⇧ shift+..
+defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
 
 # Show the ~/Library folder.
 chflags nohidden ~/Library
@@ -100,5 +105,8 @@ defaults write com.apple.dock autohide -bool true
 # defaults write com.apple.dock autohide-time-modifier -float 0.25
 
 # Show hidden apps on doc
-defaults write com.apple.Dock showhidden -bool YES; killall Dock
+defaults write com.apple.Dock showhidden -bool YES
+
+#
+killall Dock
 
