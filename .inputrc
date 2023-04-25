@@ -1,0 +1,4 @@
+bindkey -e
+@REM navigation by control+left\right arrow
+bindkey '\e\e[C' forward-word
+bindkey '\e\e[D' backward-word

@@ -1,9 +1,9 @@
 export ZSH="${HOME}/.oh-my-zsh"
-# export ARCHFLAGS="-arch x86_64" m1 hello
 
 DEFAULT_USER=`whoami`
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# export ARCHFLAGS="-arch x86_64" m1 hello
 # brew fix ffi
 # brew install automake libffi pkg-config
 # export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
@@ -21,7 +21,6 @@ export CPPFLAGS="-I/opt/homebrew/opt/libffi/include -I/opt/homebrew/opt/openssl@
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/homebrew/opt/openssl@3/lib/pkgconfig
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/homebrew/opt/libffi/lib/pkgconfig
 
-# use zplug?
 plugins=(
   git
   zsh-autosuggestions
@@ -30,10 +29,6 @@ plugins=(
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_DISABLE_COMPFIX=true
-
-source $ZSH/oh-my-zsh.sh
-source ~/.iterm2_shell_integration.zsh
-source ~/.aliases
 
 # If command execution time above min. time, plugins will not output time.
 ZSH_COMMAND_TIME_MIN_SECONDS=3
@@ -61,6 +56,10 @@ POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='red'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
+
+source $ZSH/oh-my-zsh.sh
+source ~/.iterm2_shell_integration.zsh
+source ~/.aliases
 
 # brew
 

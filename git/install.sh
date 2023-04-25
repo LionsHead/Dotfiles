@@ -3,6 +3,8 @@
 # Setup gitconfig
 if [[ -f ~/.gitconfig_local ]]; then
   success 'Enable ~/.gitconfig_local'
+else
+  touch ~/.gitconfig_local
 fi
 
 read -r -p "Setup new git local configuration? [Y|n] " response
@@ -33,5 +35,5 @@ if [[ $response =~ (y|yes|Y) ]];then
   link "git/.gitconfig"
   link "git/.gitignore_global"
 
-  success 'fonts installed'
+  success 'git config installed'
 fi

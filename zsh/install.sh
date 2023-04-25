@@ -5,6 +5,7 @@ info "Installing oh-my-zsh"
 brew install zsh zsh-completions
 
 link "zsh/.zshrc"
+touch ~/.zshrc_local
 link "zsh/.aliases"
 
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh

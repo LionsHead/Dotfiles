@@ -26,12 +26,14 @@ if ! xcode-select -p>/dev/null; then
   success 'xcode console tools installed'
 fi
 
+source symlinks.sh
+
 # read -r -p "Backup current dotfiles? [Y/n] " response_backup
-# read -r -p "Use new default settings for mac os? [y/N] " response_defaults
-read -r -p "Install brew packages? [y/N] " response_packges
-read -r -p "Install asdf tools? [Y/n] " response_asdf_tools
-read -r -p "Use default settings for iTerm2? [y/n] " response_iterm
-read -r -p "Install vscode extensions? [y/N] " response_vscode
+# # read -r -p "Use new default settings for mac os? [y/N] " response_defaults
+# read -r -p "Install brew packages? [y/N] " response_packges
+# read -r -p "Install asdf tools? [Y/n] " response_asdf_tools
+# read -r -p "Use default settings for iTerm2? [y/n] " response_iterm
+# read -r -p "Install vscode extensions? [y/N] " response_vscode
 
 # if [[ $response_backup =~ (y|yes|Y) ]]; then
 #   mkdir -p ~/.old_dotfiles
@@ -47,19 +49,9 @@ read -r -p "Install vscode extensions? [y/N] " response_vscode
 #   success 'Mac os configured'
 # fi
 
-# ## Other dotfiles
-# ## SSH
-# ln -fisv "${DOTFILES_PATH}ssh/config" ~/.ssh/config
-# link ".editorconfig"
-# ## elixir
-# link "elixir/.iex.exs"
-# ## ruby
-# link "ruby/.gemrc"
-# link "ruby/.default-gems"
-
-# Setup git config
+# # Setup git config
 source git/install.sh
-# Install brew
+# # Install brew
 source brew/install.sh
 # ASDF version manager
 source asdf/install.sh
@@ -67,11 +59,6 @@ source asdf/install.sh
 # iTerm2
 if [[ $response_iterm =~ (y|yes|Y) ]]; then
   source iterm2/install.sh
-fi
-
-# Visual Studio Code
-if [[ $response_vscode =~ (y|yes|Y) ]]; then
-  source vscode/install.sh
 fi
 
 # ZSH
