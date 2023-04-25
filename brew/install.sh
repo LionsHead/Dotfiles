@@ -1,41 +1,12 @@
 #!/bin/bash
 
-# apps=(
-#     iterm2
-#     visual-studio-code
-#     google-chrome
-#     slack
-#     telegram
-#     1password
-# )
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
 
-# tap "homebrew/bundle"
-# tap "homebrew/cask"
-# tap "homebrew/cask-fonts"
-# tap "homebrew/core"
-# tap "homebrew/services"
-
-# brew "autoconf"
-# brew "automake"
-# brew "bat"
-# brew "coreutils"
-# brew "ctags"
-# brew "fx"
-# brew "readline"
-# brew "libtool"
-# brew "graphviz"
-# brew "imagemagick"
-# brew "libxslt"
-# brew "libyaml"
-# brew "minikube"
-# brew "openshift-cli"
-# brew "rsync"
-# brew "unixodbc"
-# brew "wxmac"
-# brew "yarn"
-
-# cask "font-fira-code"
-# cask "minikube"
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
 
 # Install brew
 if ! [ -x "$(command -v brew)" ]; then
@@ -48,13 +19,22 @@ if ! [ -x "$(command -v brew)" ]; then
 fi
 
 # Install brew packages
-# if [[ $response_packges =~ (y|yes|Y) ]];then
-#   info 'Brew install apps'
+if [[ $response_packges =~ (y|yes|Y) ]];then
+  brew bundle --file="${DOTFILES_PATH}brew/Brewfile"
 
-#   brew bundle --file="${DOTFILES_PATH}brew/Brewfile"
-#   brew --cask install "${apps[@]}"
+  info 'Install apps by Brew'
+  brew install --cask iterm2
+  brew install --cask visual-studio-code
+  brew install --cask google-chrome
+  brew install --cask slack
+  brew install --cask telegram
+  brew install --cask 1password
 
-#   success 'Installed'
+  success 'Apps installed'
+  info 'Install fonts by Brew'
 
-#   success 'Fonts installed'
-# fi
+  brew tap homebrew/cask-fonts
+  brew install --cask font-fira-code
+
+  success 'Fonts installed'
+fi
