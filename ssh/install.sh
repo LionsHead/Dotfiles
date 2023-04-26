@@ -7,7 +7,11 @@ info () {
 info "Installing ssh keys"
 
 # load ssh keys by keychain
-ssh-add --apple-load-keychain  ~/.ssh/id_rsa
+# ssh-add --apple-load-keychain  ~/.ssh/id_rsa
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
 
 # ssh
 ln -fisv "${DOTFILES_PATH}ssh/config" ~/.ssh/config
+
+# fix Load key "~/.ssh/id_rsa": bad permissions
+chmod 400 ~/.ssh/Key file
