@@ -1,4 +1,4 @@
-ruby 2.6.8
+ruby 2.6.3
 postgres 12.10
 nodejs 15.14.0
 mysql 8.0.28

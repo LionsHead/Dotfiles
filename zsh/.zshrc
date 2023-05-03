@@ -3,31 +3,12 @@ export ZSH="${HOME}/.oh-my-zsh"
 DEFAULT_USER=`whoami`
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# export ARCHFLAGS="-arch x86_64" m1 hello
-# brew fix ffi
-# brew install automake libffi pkg-config
-# export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
-# export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
-# gem install ffi -v '1.12.2' -- --with-cflags="-Wno-error=implicit-function-declaration"
-#### apple m1 cfg
-# asdf m1
-# export RUBY_CONFIGURE_OPTS="--with-zlib-dir=/opt/homebrew/opt/zlib --with-openssl-dir=/opt/homebrew/opt/openssl@1.1 --with-readline-dir=/opt/homebrew/opt/readline --with-libyaml-dir=/opt/homebrew/opt/libyaml"
-export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
-export CONFIGURE_OPTS="--build aarch64-apple-darwin20"
-# ffi m1
-export LDFLAGS="-L/opt/homebrew/opt/libffi/lib -L/opt/homebrew/opt/openssl@3/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/libffi/include -I/opt/homebrew/opt/openssl@3/include"
-#
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/homebrew/opt/openssl@3/lib/pkgconfig
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/homebrew/opt/libffi/lib/pkgconfig
-
 plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_DISABLE_COMPFIX=true
 
 # If command execution time above min. time, plugins will not output time.
@@ -37,6 +18,8 @@ ZSH_COMMAND_TIME_MIN_SECONDS=3
 ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
 
 ZSH_HIGHLIGHT_MAXLENGTH=90
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
@@ -62,8 +45,8 @@ source ~/.iterm2_shell_integration.zsh
 source ~/.aliases
 
 # brew
-
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
 #### asdf
 # native installation
 # . $HOME/.asdf/asdf.sh
