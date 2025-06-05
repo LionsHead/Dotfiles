@@ -1,4 +1,4 @@
-Mac OS defaults
+# MacOS settings
 
 ## Usage
 

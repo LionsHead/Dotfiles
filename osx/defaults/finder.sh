@@ -10,23 +10,23 @@
 defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
 
 
-# Finder: show all filename extensions
+# Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+# Sllow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
 
-# Finder: Show icons for hard drives, servers, and removable media on the desktop
+# Show icons for hard drives, servers, and removable media on the desktop
 # defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 # defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
 # defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 # defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-# Finder: show hidden files by default
+# Show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-# Finder: show status bar
+# Show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Finder: show path bar
+# Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
