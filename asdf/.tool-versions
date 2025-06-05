@@ -1,6 +1,6 @@
-ruby 2.6.3
-postgres 12.10
-nodejs 15.14.0
-mysql 8.0.28
-golang 1.20
-python 2.7.18
+ruby 3.2.2
+postgres 14.8
+nodejs 16.20.2
+mysql 8.0.32
+golang 1.24.2
+python 3.8.18

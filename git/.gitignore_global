@@ -13,6 +13,9 @@ docker-compose.override.yml
 .docker-sync/
 docker-sync.yml
 
+# vscode
+.vscode
+
 #
 .idea
 .generators

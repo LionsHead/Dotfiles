@@ -26,6 +26,7 @@ if ! xcode-select -p>/dev/null; then
   success 'xcode console tools installed'
 fi
 
+# Create configs & dotfiles symlinks
 source symlinks.sh
 
 # read -r -p "Backup current dotfiles? [Y/n] " response_backup

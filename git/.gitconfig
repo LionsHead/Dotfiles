@@ -20,6 +20,8 @@
 [push]
   # Make `git push` push relevant annotated tags when pushing branches out.
   followTags = true
+  # Automatically set origin as the remote for current branch
+  autoSetupRemote = true
 
 [apply]
   # Detect whitespace errors when applying a patch
@@ -41,17 +43,19 @@
   poh = push origin head
   co = checkout
   br = branch -v
-  brs = for-each-ref --sort=-committerdate --count=10 refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+  brs = for-each-ref --sort=-committerdate --count=20 refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
   # Set remote origin
   set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 	# Switch to a branch, creating it if necessary
-  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"# Remove branches that have already been merged with master
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+  # Remove branches that have already been merged with master
   del-merged = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
   # View branches that don't merged with develop
   no-merged = branch -r -v --no-merged origin/develop
 
-  # squash all your commits to master
-  remaster = reset $(git merge-base master $(git branch --show-current))
+  # squash all your commits to master"
+  remaster = !"git reset $(git merge-base master $(git branch --show-current)) "
+  redev = !"git reset $(git merge-base develop $(git branch --show-current)) "
 
   ################################ Changes
   unstage = reset HEAD --

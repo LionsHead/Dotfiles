@@ -9,6 +9,7 @@ link () {
 # local configs
 touch ~/.gitconfig_local
 touch ~/.zshrc_local
+touch ~/.ssh/config_local
 
 # link ".inputrc"
 link ".editorconfig"

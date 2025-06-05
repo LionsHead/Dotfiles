@@ -19,10 +19,16 @@ alias ber="bundle exec rake"
 alias bec="bundle exec cap"
 
 # docker commands
-alias dcrun="docker-compose run --rm --service-ports web bash"
-alias dcbash="docker-compose run --rm web bash"
-alias dc="docker-compose"
+alias dcrun="docker compose run --rm --service-ports web bash"
+alias dcbash="docker compose run --rm web bash"
+alias dc="docker compose"
 
 # docker-sync
 alias dsync="docker-sync start"
 alias ds="docker-sync"
+
+# other
+alias drone-login="PWDL=$(pwd);cd $WORKDIR; . <(sops -d ./sunop-release/bin/drone.pgp);cd $PWDL"
+
+# golang
+alias go-reshim='asdf reshim golang && export GOROOT="$(asdf where golang)/go/"'

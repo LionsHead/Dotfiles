@@ -31,18 +31,18 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/homebrew/opt/libffi/lib/pkgconfig
 # brew install -s ruby-build
 
 # # fix env config
-# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-# export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
 
 # export LDFLAGS="-L/opt/homebrew/opt/readline/lib:$LDFLAGS"
 # export CPPFLAGS="-I/opt/homebrew/opt/readline/include:$CPPFLAGS"
 # export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig:$PKG_CONFIG_PATH"
 
-# export LDFLAGS="-L/opt/homebrew/opt/libffi/lib:$LDFLAGS"
-# export CPPFLAGS="-I/opt/homebrew/opt/libffi/include:$CPPFLAGS"
-# export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LDFLAGS="-L/opt/homebrew/opt/libffi/lib:$LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/opt/libffi/include:$CPPFLAGS"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH"
 
-# export optflags="-Wno-error=implicit-function-declaration"
+export optflags="-Wno-error=implicit-function-declaration"
 
 # # optional
 # # export RUBY_CFLAGS="-w"

@@ -61,3 +61,20 @@ if [[ -f ~/.zshrc_local ]]; then
   source ~/.zshrc_local
 fi
 
+# winks
+export LDFLAGS="-L$(brew --prefix openssl@1.1)/lib"
+export CFLAGS="-I$(brew --prefix openssl@1.1)/include"
+export CGO_CPPFLAGS="-w -I$(brew --prefix jpeg-turbo)/include -I$(brew --prefix leveldb)/include/leveldb -I$(brew --prefix snappy)/include"
+export CGO_LDFLAGS="-L$(brew --prefix jpeg-turbo)/lib -L$(brew --prefix leveldb)/lib -L$(brew --prefix snappy)/lib"
+export THREADS=$(sysctl -n machdep.cpu.core_count)
+
+# The next line updates PATH for CLI.
+if [ -f '/Users/endurance/yandex-cloud/path.bash.inc' ]; then source '/Users/endurance/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '/Users/endurance/yandex-cloud/completion.zsh.inc' ]; then source '/Users/endurance/yandex-cloud/completion.zsh.inc'; fi
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/endurance/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
