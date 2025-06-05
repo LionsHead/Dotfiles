@@ -18,23 +18,4 @@ if ! [ -x "$(command -v brew)" ]; then
   success 'Brew installed'
 fi
 
-# Install brew packages
-if [[ $response_packges =~ (y|yes|Y) ]];then
-  brew bundle --file="${DOTFILES_PATH}brew/Brewfile"
-
-  info 'Install apps by Brew'
-  brew install --cask iterm2
-  brew install --cask visual-studio-code
-  brew install --cask google-chrome
-  brew install --cask slack
-  brew install --cask telegram
-  brew install --cask 1password
-
-  success 'Apps installed'
-  info 'Install fonts by Brew'
-
-  brew tap homebrew/cask-fonts
-  brew install --cask font-fira-code
-
-  success 'Fonts installed'
-fi
+source bundle.sh
