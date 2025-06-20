@@ -5,16 +5,10 @@
 [include]
   path = ~/.gitconfig_local
 
-[includeIf "gitdir:/Users/user/Work/**"]
-    path = ~/Work/.gitconfig
-
 [credential]
     helper = osxkeychain
 
 [color]
-  diff = auto
-  status = auto
-  branch = auto
   ui = true
 
 [push]
@@ -23,9 +17,19 @@
   # Automatically set origin as the remote for current branch
   autoSetupRemote = true
 
+[pull]
+  rebase = true
+
+[diff]
+  algorithm = histogram
+  compactionHeuristic = true
+
 [apply]
   # Detect whitespace errors when applying a patch
   whitespace = fix
+
+[merge]
+  conflictStyle = diff3
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -60,6 +64,7 @@
   ################################ Changes
   unstage = reset HEAD --
   discard = reset --hard HEAD
+  undo = reset --soft HEAD~1
   # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
   diffc = diff --cached
@@ -82,3 +87,5 @@
   last = log --pretty=oneline -n 20 --graph --abbrev-commit --date=short
   # Short log
   l = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  # Show contributors - path optional
+  who = shortlog -n -s --no-merges
