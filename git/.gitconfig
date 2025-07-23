@@ -28,9 +28,6 @@
   # Detect whitespace errors when applying a patch
   whitespace = fix
 
-[merge]
-  conflictStyle = diff3
-
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
