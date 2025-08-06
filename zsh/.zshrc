@@ -62,8 +62,8 @@ if [[ -f ~/.zshrc_local ]]; then
 fi
 
 # winks
-export LDFLAGS="-L$(brew --prefix openssl@1.1)/lib"
-export CFLAGS="-I$(brew --prefix openssl@1.1)/include"
+# export LDFLAGS="-L$(brew --prefix openssl@1.1)/lib"
+# export CFLAGS="-I$(brew --prefix openssl@1.1)/include"
 export CGO_CPPFLAGS="-w -I$(brew --prefix jpeg-turbo)/include -I$(brew --prefix leveldb)/include/leveldb -I$(brew --prefix snappy)/include"
 export CGO_LDFLAGS="-L$(brew --prefix jpeg-turbo)/lib -L$(brew --prefix leveldb)/lib -L$(brew --prefix snappy)/lib"
 export THREADS=$(sysctl -n machdep.cpu.core_count)
